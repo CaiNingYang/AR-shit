@@ -122,12 +122,12 @@ function initialize()
 	
 	//now we'll load in the dog complete with material
 	new THREE.MTLLoader()
-		.setPath( '../../models/puppy/' )
+		.setPath( '../../models/' )
 		.load( 'Diamond.mtl', function ( materials ) {
 			materials.preload();
 			new THREE.OBJLoader()
 				.setMaterials( materials )
-				.setPath( '../../models/puppy/' )
+				.setPath( '../../models/' )
 				.load( 'Diamond.obj', function ( group ) {
 					mesh0 = group.children[0];
 					mesh0.material.side = THREE.DoubleSide;
