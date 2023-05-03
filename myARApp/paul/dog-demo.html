@@ -4,11 +4,6 @@
 	<title>Hello, world!</title>
 	<!-- include three.js library -->
 	<script src='../../js/three.js'></script>
-	let textureLoader = new THREE.TextureLoader();
-textureLoader.load('../../images/rock.jpg', function(texture) {
-  console.log('Texture loaded', texture);
-  // create material and mesh here
-});
 	<script src='../../js/OBJLoader.js'></script>
 	<script src='../../js/MTLLoader.js'></script>
 	<!-- include jsartookit -->
@@ -129,6 +124,11 @@ function initialize()
 	new THREE.MTLLoader()
 		.setPath( '../../models/' )
 		.load( 'Diamond.mtl', function ( materials ) {
+			let textureLoader = new THREE.TextureLoader();
+			textureLoader.load('../../images/rock.jpg', function(texture) {
+  				console.log('Texture loaded', texture);
+ 			 	// create material and mesh here
+			});
 			materials.preload();
 			new THREE.OBJLoader()
 				.setMaterials( materials )
